@@ -1,0 +1,82 @@
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+/>
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+<!--Import materialize.css-->
+<link
+  type="text/css"
+  rel="stylesheet"
+  href="css/materialize.min.css"
+  media="screen,projection"
+/>
+
+<script type="text/javascript" src="js/materialize.min.js"></script>
+
+<style>
+  body {
+    background-color: #808080;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  input::placeholder {
+    color: #ffa500;
+  }
+
+  .center-column {
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #808080;
+    border-radius: 3px;
+    box-shadow: 6px 2px 30px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  .item-row {
+    background-color: #800020;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 17px;
+    box-shadow: 0px -1px 10px -4px rgba(0, 0, 0, 0.75);
+  }
+
+  .btn-danger {
+    background-color: #808080;
+    border-color: #ff0000;
+  }
+</style>
+
+<h5 style="color: orange">ARE YOU SURE YOU WANT TO DELETE"{{item}}"?</h5>
+
+<button class="btn waves-effect waves-light btn-large white">
+  <a href="{% url 'list' %}">Cancel</a>
+</button>
+
+<form method="POST" action="">
+  {% csrf_token %}
+  <button
+    class="btn waves-effect waves-light btn-large orange"
+    type="submit"
+    name="create Task"
+  >
+    Submit
+    <i class="material-icons right grey">flash_on</i>
+  </button>
+</form>
